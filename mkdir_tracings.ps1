@@ -18,29 +18,12 @@ cd C:\Tracings
 
 Start-Sleep -Seconds 2
 
-mkdir a
-mkdir b
-mkdir c
-mkdir d
-mkdir e
-mkdir f
-mkdir g
-mkdir h
-mkdir i
-mkdir j
-mkdir k
-mkdir l
-mkdir m
-mkdir n
-mkdir o
-mkdir p
-mkdir q
-mkdir r
-mkdir s
-mkdir t
-mkdir u
-mkdir v
-mkdir w
-mkdir x
-mkdir y
-mkdir z
+foreach($nb in 65..90)
+{
+    $letter = $([char]$nb)
+    if (-not( Test-Path "$letter"))
+    {
+    New-Item $letter -ItemType Directory
+    Write-Host "Folder Created successfully"
+    }
+}
